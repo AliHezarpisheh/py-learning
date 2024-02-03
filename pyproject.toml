@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "simple-clean-code-tasks"
+version = "0.1.0"
+description = "Simple tasks related to clean code in python book."
+authors = ["Ali Hezarpisheh <AliHezarpisheh@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 88
+select = [
+    "E",  # pycodestyle
+    "W",  # pycodestyle
+    "F",  # pyflakes
+    "UP",  # pyupgrade
+    "C90",  # mccabe
+    "D",  # pydocstyle
+    "RUF",  # Ruff specific rules
+]
+ignore = []
+
+fixable = [
+    "F401",  # Remove unused imports.
+    "RUF100",  # Remove unused noqa comments.
+]
+
+[tool.ruff.per-file-ignores]
+"*/__init__.py" = ["F401"]
+
+
+[tool.mypy]
+ignore_missing_imports = true
+
+
+[tool.pylint.messages_control]
+# Disable warning about similar lines in multiple files (R0801)
+# Disable warning about redefining a name from an outer scope (W0621)
+# Disable warning about line too long, this part is handled by ruff (C0301)
+disable = ["R0801", "W0621", "C0301"]
