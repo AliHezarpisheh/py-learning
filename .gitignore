@@ -115,4 +115,3 @@ artifacts/
 logs/
 .ruff_cache
 .mypy_cache
-coverage.svg
