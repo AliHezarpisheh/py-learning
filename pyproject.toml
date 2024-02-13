@@ -12,6 +12,7 @@ mypy = "^1.8.0"
 pylint = "^3.0.3"
 pytest = "^8.0.0"
 pytest-cov = "^4.1.0"
+coverage-badge = "^1.1.0"
 
 
 [build-system]
@@ -50,8 +51,7 @@ ignore_missing_imports = true
 # Disable warning about redefining a name from an outer scope (W0621)
 # Disable warning about line too long, this part is handled by ruff (C0301)
 # Disable warning about unused variable (W0201)
-# Disable warning about missing docstring (C0114)
-disable = ["R0801", "W0621", "C0301", "W0201", "C0114"]
+disable = ["R0801", "W0621", "C0301", "W0201"]
 
 [tool.pylint.messages-control]
 disable = [
