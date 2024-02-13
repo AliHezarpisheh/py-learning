@@ -19,7 +19,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 
-[tool.ruff]
+[tool.lint.ruff]
 line-length = 88
 select = [
     "E",  # pycodestyle
@@ -37,7 +37,7 @@ fixable = [
     "RUF100",  # Remove unused noqa comments.
 ]
 
-[tool.ruff.per-file-ignores]
+[tool.lint.ruff.per-file-ignores]
 "*/__init__.py" = ["F401"]
 
 
@@ -49,4 +49,11 @@ ignore_missing_imports = true
 # Disable warning about similar lines in multiple files (R0801)
 # Disable warning about redefining a name from an outer scope (W0621)
 # Disable warning about line too long, this part is handled by ruff (C0301)
-disable = ["R0801", "W0621", "C0301"]
+# Disable warning about unused variable (W0201)
+# Disable warning about missing docstring (C0114)
+disable = ["R0801", "W0621", "C0301", "W0201", "C0114"]
+
+[tool.pylint.messages-control]
+disable = [
+    "E0001"  # Disable parsing failed error
+]
