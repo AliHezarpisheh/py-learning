@@ -1,5 +1,10 @@
 # Python Learning Playground
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue" alt="Python Versions">
+  <img src="./coverage.svg" alt="Coverage">
+</p>
+
 This repository is my personal space for practicing Python programming concepts, inspired by the books I have read. The code snippets and exercises here are designed for my personal learning.
 
 ## Introduction
