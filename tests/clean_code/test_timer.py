@@ -9,7 +9,7 @@ from tasks.clean_code.timer import log_function_execution_time, LogFunctionExecu
 
 def sample_function() -> None:
     """Perform a sample computation. This function is for testing purposes."""
-    [num * 2 for num in range(100000)]   # pylint: disable=W0106
+    [num * 2 for num in range(100000)]  # pylint: disable=W0106
 
 
 def test_log_function_execution_time_func(capsys: pytest.CaptureFixture) -> None:
