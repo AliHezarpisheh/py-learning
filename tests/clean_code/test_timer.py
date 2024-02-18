@@ -4,7 +4,10 @@ import time
 
 import pytest
 
-from tasks.clean_code.timer import log_function_execution_time, LogFunctionExecutionTime
+from learning_play_ground.clean_code.timer import (
+    log_function_execution_time,
+    LogFunctionExecutionTime,
+)
 
 
 def sample_function() -> None:
