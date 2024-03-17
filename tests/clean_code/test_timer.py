@@ -4,7 +4,7 @@ import time
 
 import pytest
 
-from learning_play_ground.clean_code.timer import (
+from src.clean_code.timer import (
     log_function_execution_time,
     LogFunctionExecutionTime,
 )
