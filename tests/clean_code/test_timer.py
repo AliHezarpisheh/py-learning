@@ -1,10 +1,10 @@
-"""Test module for testing the log function exection time function and class."""
+"""Test module for testing the log function execution time function and class."""
 
 import time
 
 import pytest
 
-from src.clean_code.timer import (
+from src.clean_code.idioms.timer import (
     log_function_execution_time,
     LogFunctionExecutionTime,
 )

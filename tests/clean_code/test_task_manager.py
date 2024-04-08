@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from src.clean_code.task_manager import Task, TaskManager
+from src.clean_code.idioms.task_manager import Task, TaskManager
 
 
 @pytest.fixture(name="task1", scope="module")

@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 from httpx import Response
 
-from src.clean_code.async_http_call import fetch_api, main
+from src.clean_code.asynchronous.async_http_call import fetch_api, main
 
 
 @pytest.mark.asyncio
@@ -30,7 +30,7 @@ async def test_fetch_api(url: str, expected_response: Response) -> None:
     Raises:
     AssertionError: If the actual response is not equal to the expected response.
     """
-    with patch("src.clean_code.async_http_call.httpx.AsyncClient") as mock_client:
+    with patch("src.clean_code.asynchronous.async_http_call.httpx.AsyncClient") as mock_client:
         mock_client.return_value.__aenter__.return_value.get.return_value = (
             expected_response
         )
@@ -56,7 +56,7 @@ async def test_main() -> None:
         return Response(status_code=200)
 
     with patch(
-        "src.clean_code.async_http_call.fetch_api",
+        "src.clean_code.asynchronous.async_http_call.fetch_api",
         side_effect=mock_fetch_api,
     ):
         await main(urls)
