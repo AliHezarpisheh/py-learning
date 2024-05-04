@@ -1,7 +1,7 @@
 """Module providing caching utilities for Python functions."""
 
 import functools
-from typing import Callable, Any
+from typing import Any, Callable
 
 
 def cache(func: Callable) -> Callable:

@@ -4,7 +4,6 @@ from collections import namedtuple
 from collections.abc import Sequence
 from typing import Iterator, Union
 
-
 Task = namedtuple(
     "Task", "title description due_date priority status", defaults=[False]
 )

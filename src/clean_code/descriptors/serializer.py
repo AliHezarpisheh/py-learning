@@ -1,9 +1,9 @@
 """Classes for field transformations and a dataclass representing a login event."""
 
-from datetime import datetime, timezone
-from typing import Callable, Union, Any, Optional, cast
-from functools import partial
 from dataclasses import dataclass
+from datetime import datetime, timezone
+from functools import partial
+from typing import Any, Callable, Optional, Union, cast
 
 
 class BaseFieldTransformation(object):

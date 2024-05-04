@@ -1,7 +1,7 @@
 """Module for measuring the execution time of a function."""
 
-import time
 import contextlib
+import time
 from typing import Generator
 
 
