@@ -163,6 +163,14 @@ class DoublyLinkedList:
         if is_any_node_deleted:
             self.count -= 1
 
+    def reverse_iter(self) -> Generator[Any, None, None]:
+        """Iterate in the reverse order of the list."""
+        current = self.tail
+        while current:
+            data = current.data
+            yield data
+            current = current.previous
+
     def clear(self) -> None:
         """Clear the list."""
         self.head = self.tail = None
