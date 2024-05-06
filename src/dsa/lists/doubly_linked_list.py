@@ -1,37 +1,25 @@
-from typing import Generator, Any
+from typing import Any, Generator
 
 
 class Node:
-    """Represent a node in a singly linked list."""
-
-    def __init__(self, data: Any) -> None:
-        """
-        Initialize a node with the given data.
-
-        Parameters
-        ----------
-        data : Any
-            The data to be stored in the node.
-        """
+    def __init__(
+        self,
+        data: Any = None,
+        previous: "Node" | None = None,
+        next: "Node" | None = None,
+    ) -> None:
         self.data = data
-        self.next = None
-
-    def __str__(self) -> str:
-        """Return a string representation of the node."""
-        return f"Node <data={self.data} next={self.next}>"
-
-    def __repr__(self) -> str:
-        """Return a string representation of the node for debugging purposes."""
-        return f"Node(data={self.data})"
+        self.next = next
+        self.previous = previous
 
 
-class SinglyLinkedList:
-    """Represent a singly linked list data structure."""
+class DoublyLinkedList:
+    """Represent a doubly linked list data structure."""
 
     def __init__(self) -> None:
-        """Initialize a singly linked list data structure."""
-        self.tail = None  # First element in the list
-        self.head = None  # Last element in the list
+        """Initialize a doubly linked list data structure."""
+        self.head = None  # First element in the list
+        self.tail = None  # Last element in the list1
         self.count = 0
 
     def __iter__(self) -> Generator[Any, None, None]:
@@ -43,7 +31,7 @@ class SinglyLinkedList:
         Any
             The data of each node in the list.
         """
-        current = self.tail
+        current = self.head
         while current:
             data = current.data
             yield data
@@ -73,12 +61,12 @@ class SinglyLinkedList:
         if index > self.count - 1:
             raise IndexError("Index out of range.")
 
-        current = self.tail
+        current = self.head
         for _ in range(index):
             current = current.next
         return current.data
 
-    def __setitem__(self, index: int, value: Any) -> None:
+    def __setitem__(self, index: int, value: Any) -> Any:
         """
         Set the data at the specified index in the list.
 
@@ -99,14 +87,10 @@ class SinglyLinkedList:
         if index > self.count - 1:
             raise IndexError("Index out of range.")
 
-        current = self.tail
+        current = self.head
         for _ in range(index):
             current = current.next
         current.data = value
-
-    def __len__(self) -> int:
-        """The length of the list."""
-        return self.count
 
     def __contains__(self, data: Any) -> bool:
         """
@@ -136,13 +120,14 @@ class SinglyLinkedList:
         data : Any
             The data to append to the list.
         """
-        node = Node(data)
-        if self.head:
-            self.head.next = node
-            self.head = node
+        new_node = Node(data=data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
         else:
-            self.tail = node
-            self.head = node
+            new_node.previous = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
         self.count += 1
 
     def delete(self, data: Any) -> None:
@@ -154,35 +139,31 @@ class SinglyLinkedList:
         data : Any
             The data to delete from the list.
         """
-        current = self.tail
-        previous = self.tail
-        while current:
-            if current.data == data:
-                if current == self.tail:
-                    self.tail = current.next
-                elif current == self.head:
-                    previous.next = current.next
-                    self.head = previous
-                else:
-                    previous.next = current.next
-                self.count -= 1
-                break
-            previous = current
-            current = current.next
+        current = self.head
+        is_any_node_deleted = False
+
+        if current is None:
+            pass
+        elif current.data == data:
+            self.head = current.next
+            self.head.previous = None
+            is_any_node_deleted = True
+        elif self.tail.data == data:
+            self.tail = self.tail.previous
+            self.tail.next = None
+            is_any_node_deleted = True
+        else:
+            while current:
+                if current.data == data:
+                    current.previous.next = current.next
+                    current.next.previous = current.previous
+                    is_any_node_deleted = True
+                current = current.next
+
+        if is_any_node_deleted:
+            self.count -= 1
 
     def clear(self) -> None:
         """Clear the list."""
-        self.tail = self.head = None
+        self.head = self.tail = None
         self.count = 0
-
-
-if __name__ == "__main__":
-    sll = SinglyLinkedList()
-
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    sll.append(4)
-    sll.append(5)
-
-    sll.delete(5)
