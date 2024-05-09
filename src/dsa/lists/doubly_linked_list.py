@@ -140,27 +140,27 @@ class DoublyLinkedList:
             The data to delete from the list.
         """
         current = self.head
-        is_any_node_deleted = False
+        is_deleted = False
 
         if current is None:
             pass
         elif current.data == data:
             self.head = current.next
             self.head.previous = None
-            is_any_node_deleted = True
+            is_deleted = True
         elif self.tail.data == data:
             self.tail = self.tail.previous
             self.tail.next = None
-            is_any_node_deleted = True
+            is_deleted = True
         else:
             while current:
                 if current.data == data:
                     current.previous.next = current.next
                     current.next.previous = current.previous
-                    is_any_node_deleted = True
+                    is_deleted = True
                 current = current.next
 
-        if is_any_node_deleted:
+        if is_deleted:
             self.count -= 1
 
     def reverse_iter(self) -> Generator[Any, None, None]:
