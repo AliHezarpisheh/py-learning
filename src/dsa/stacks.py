@@ -10,6 +10,7 @@ from typing import Any
 
 class Node:
     """Node class."""
+
     def __init__(self, data: Any) -> None:
         """
         Initializes a new node with the given data.
@@ -24,7 +25,7 @@ class Node:
 
 
 class NodeStack:
-    """ Implementation of a stack using linked list nodes."""
+    """Implementation of a stack using linked list nodes."""
 
     def __init__(self) -> None:
         """Initializes an empty stack."""
@@ -87,8 +88,9 @@ class NodeStack:
 
 class ListStack:
     """Implementation of a stack using a Python list."""
+
     def __init__(self) -> None:
-        """ Initializes an empty stack."""
+        """Initializes an empty stack."""
         self.items = []
 
     def push(self, data: Any) -> None:
