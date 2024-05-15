@@ -1,4 +1,4 @@
-from typing import Generator, Optional, Any
+from typing import Any, Generator, Optional
 
 
 class Node:

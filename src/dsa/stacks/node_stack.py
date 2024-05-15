@@ -77,3 +77,6 @@ class NodeStack:
     def __len__(self) -> int:
         """Return the siz of the stack."""
         return self.size
+
+    def __bool__(self) -> bool:
+        return self.size > 0

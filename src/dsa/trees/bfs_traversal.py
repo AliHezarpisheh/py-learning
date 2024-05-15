@@ -22,18 +22,18 @@ class TreeNode:
 
 def breadth_first_traversal(root_node: TreeNode) -> Generator[Any, None, None]:
     """
-        Perform a breadth-first traversal on the binary tree rooted at 'root_node'.
-    
-        Parameters
-        ----------
-        root_node : TreeNode
-            The root node of the binary tree to traverse.
-    
-        Yields
-        ------
-        Any
-            The data of each node in breadth-first order.
-        """
+    Perform a breadth-first traversal on the binary tree rooted at 'root_node'.
+
+    Parameters
+    ----------
+    root_node : TreeNode
+        The root node of the binary tree to traverse.
+
+    Yields
+    ------
+    Any
+        The data of each node in breadth-first order.
+    """
     if root_node is None:
         return None
 
@@ -50,14 +50,14 @@ def breadth_first_traversal(root_node: TreeNode) -> Generator[Any, None, None]:
 
 
 if __name__ == "__main__":
-    A = TreeNode('A')
-    B = TreeNode('B')
-    C = TreeNode('C')
-    D = TreeNode('D')
-    E = TreeNode('E')
-    F = TreeNode('F')
-    G = TreeNode('G')
-    H = TreeNode('H')
+    A = TreeNode("A")
+    B = TreeNode("B")
+    C = TreeNode("C")
+    D = TreeNode("D")
+    E = TreeNode("E")
+    F = TreeNode("F")
+    G = TreeNode("G")
+    H = TreeNode("H")
 
     A.left_child = B
     A.right_child = C
