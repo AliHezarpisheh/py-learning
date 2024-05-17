@@ -1,4 +1,8 @@
+"""Module containing factorial function."""
+
+
 def factorial(number: int) -> int:
+    """Factorial function."""
     assert number >= 0, "The number should be greater than or equal 0"
 
     if number == 0:

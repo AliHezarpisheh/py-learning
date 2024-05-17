@@ -1,3 +1,27 @@
+"""
+BFS traverses a binary tree level by level. It starts at the root and explores all the
+nodes at the present depth level before moving on to nodes at the next depth level.
+
+How it works:
+
+Initialization: Begin at the root node.
+Queue: Use a queue to keep track of nodes. Initially, enqueue the root node.
+Traversal:
+Dequeue a node from the front of the queue.
+Visit this node (process it according to your needs).
+Enqueue the node's children (first the left child, then the right child) to the queue.
+Repeat the above steps until the queue is empty.
+
+Characteristics:
+
+Level-order: BFS is also called level-order traversal because it processes nodes level
+by level. Space Complexity: It requires more memory compared to DFS because it stores
+all the nodes at a given level. For a complete binary tree, the space complexity can go
+up to O(n/2) ≈ O(n) where n is the number of nodes. Application: BFS is useful when the
+shortest path is needed (like in unweighted graphs) and for systems that need to process
+nodes level by level.
+"""
+
 from collections import deque
 from typing import Any, Generator
 

@@ -1,7 +1,11 @@
+"""Module containing Node Based Queue."""
+
 from typing import Any
 
 
 class Node:
+    """Doubly Linked List Node."""
+
     def __init__(self, data: Any) -> None:
         self.data = data
         self.previous = None
@@ -55,5 +59,3 @@ class NodeBasedQueue(object):
             self.head.previous = None
             self.size -= 1
             return data
-
-

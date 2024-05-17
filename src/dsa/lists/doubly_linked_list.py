@@ -1,3 +1,5 @@
+"""Module containing Doubly Linked List."""
+
 from typing import Any, Generator
 
 
@@ -8,6 +10,7 @@ class Node:
         previous: "Node" | None = None,
         next: "Node" | None = None,
     ) -> None:
+        """Doubly Linked List Node."""
         self.data = data
         self.next = next
         self.previous = previous

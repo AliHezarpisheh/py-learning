@@ -1,3 +1,5 @@
+"""Module containing Node Based Stack."""
+
 from typing import Any
 
 

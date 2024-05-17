@@ -1,3 +1,5 @@
+"""Module containing Circular Linked Lists."""
+
 from typing import Any, Generator, Optional
 
 
@@ -8,6 +10,7 @@ class Node:
         next: Optional["Node"] = None,
         previous: Optional["Node"] = None,
     ) -> None:
+        """Doubly Linked List Node."""
         self.data = data
         self.next = next
         self.previous = previous

@@ -1,3 +1,5 @@
+"""Module containing Singly Linked List."""
+
 from typing import Any, Generator
 
 

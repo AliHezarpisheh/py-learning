@@ -1,3 +1,5 @@
+"""Module containing a BInary Tree Node."""
+
 from typing import Any
 
 

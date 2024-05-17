@@ -1,3 +1,5 @@
+"""Module containing Array Based Queue."""
+
 from typing import Any
 
 

@@ -1,3 +1,38 @@
+"""
+DFS traverses a binary tree by exploring as far down one branch before backtracking.
+It has three common variants based on the order of node processing: Inorder, Preorder,
+and Postorder.
+
+How it works:
+
+Initialization: Begin at the root node.
+Stack (Implicit/Explicit): Use a stack to keep track of nodes. This stack can be managed
+explicitly or through the function call stack (recursion).
+
+Variants:
+
+Preorder (Root, Left, Right):
+Visit the root node.
+Traverse the left subtree.
+Traverse the right subtree.
+Inorder (Left, Root, Right):
+Traverse the left subtree.
+Visit the root node.
+Traverse the right subtree.
+Postorder (Left, Right, Root):
+Traverse the left subtree.
+Traverse the right subtree.
+Visit the root node.
+Characteristics:
+
+Depth-first: DFS goes as deep as possible along each branch before backtracking.
+Space Complexity: It generally uses less memory compared to BFS since it doesn't need to
+store all nodes at a particular level. For balanced trees, the space complexity is O(h),
+where h is the height of the tree. Application: DFS is useful for problems involving
+path finding, tree traversal (like parsing expressions in compilers), and scenarios
+requiring visiting all nodes (like checking properties of all nodes).
+"""
+
 from typing import Any
 
 

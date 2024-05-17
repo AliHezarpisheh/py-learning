@@ -1,3 +1,5 @@
+"""Module containing Array Based Stack."""
+
 from typing import Any
 
 

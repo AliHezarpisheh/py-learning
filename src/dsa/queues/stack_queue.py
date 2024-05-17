@@ -1,3 +1,5 @@
+"""Module containing Stack Based Queue."""
+
 from typing import Any
 
 from ..stacks.node_stack import NodeStack
