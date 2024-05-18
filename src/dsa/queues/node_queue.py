@@ -12,7 +12,7 @@ class Node:
         self.next = None
 
 
-class NodeBasedQueue(object):
+class NodeBasedQueue:
     """Represent a node-based queue data structure."""
 
     def __init__(self):

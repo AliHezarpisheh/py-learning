@@ -17,16 +17,16 @@ This process continues until all elements from both halves are merged.
 
 def merge_sort(arr: list) -> list[int]:
     if len(arr) > 1:
-        # Split the array into two halves
+        # Split the array into two halves.
         mid = len(arr) // 2
         left_half = arr[:mid]
         right_half = arr[mid:]
 
-        # Recursively sort each half
+        # Recursively sort each half.
         merge_sort(left_half)
         merge_sort(right_half)
 
-        # Merge the sorted halves
+        # Merge the sorted halves.
         i = j = k = 0
 
         while i < len(left_half) and j < len(right_half):

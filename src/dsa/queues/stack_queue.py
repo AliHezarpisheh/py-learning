@@ -35,6 +35,6 @@ class StackBasedQueue:
         """
         if not self.outbound_stack:
             while self.inbound_stack:
-                self.outbound_stack.append(self.inbound_stack.pop())
+                self.outbound_stack.push(self.inbound_stack.pop())
 
         return self.outbound_stack.pop()

@@ -146,7 +146,7 @@ class DoublyLinkedList:
         is_deleted = False
 
         if current is None:
-            pass
+            return None
         elif current.data == data:
             self.head = current.next
             self.head.previous = None
