@@ -24,7 +24,7 @@ return an indication that it doesn't exist in the list (e.g., -1).
 def binary_search(arr: list, target: int, low: int, high: int) -> int:
     """
     Perform a binary search to find the target value in a sorted array.
-    
+
     Parameters
     ----------
     arr : list
