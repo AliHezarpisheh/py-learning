@@ -42,7 +42,7 @@ def quick_select(arr: list[int], low: int, high: int, k: int) -> int:
 
     This function recursively partitions the array and selects the k-th smallest
     element.
-    
+
     Parameters
     ----------
     arr : list of int
@@ -58,7 +58,7 @@ def quick_select(arr: list[int], low: int, high: int, k: int) -> int:
     -------
     int
         The k-th smallest element in the array.
-        
+
     Notes
     -----
     If the array does not contain at least k+1 elements, the behavior is undefined.

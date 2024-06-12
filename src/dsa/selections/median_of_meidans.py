@@ -32,7 +32,7 @@ def median_of_median(arr: list[int], low: int, high: int) -> int:
     """
     Find the median of medians in a list of integers.
 
-    This function recursively finds the median of medians for use as a pivot in 
+    This function recursively finds the median of medians for use as a pivot in
     the Quickselect algorithm. It divides the list into groups of at most 5 elements,
     finds the median of each group, and recursively finds the median of those medians.
 
@@ -51,12 +51,12 @@ def median_of_median(arr: list[int], low: int, high: int) -> int:
         The median of medians of the list.
     """
     if high - low <= 5:
-        return find_median(arr[low:high + 1])
+        return find_median(arr[low : high + 1])
 
     medians = []
     for i in range(low, high + 1, 5):
         sub_right = i + 4 if i + 4 <= high else high
-        medians.append(find_median(arr[i: sub_right + 1]))
+        medians.append(find_median(arr[i : sub_right + 1]))
     return median_of_median(medians, 0, len(medians) - 1)
 
 
