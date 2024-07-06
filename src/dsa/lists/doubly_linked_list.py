@@ -1,5 +1,7 @@
 """Module containing Doubly Linked List."""
 
+from __future__ import annotations
+
 from typing import Any, Generator
 
 
@@ -7,8 +9,8 @@ class Node:
     def __init__(
         self,
         data: Any = None,
-        previous: "Node" | None = None,
-        next: "Node" | None = None,
+        previous: Node | None = None,
+        next: Node | None = None,
     ) -> None:
         """Doubly Linked List Node."""
         self.data = data
@@ -22,7 +24,7 @@ class DoublyLinkedList:
     def __init__(self) -> None:
         """Initialize a doubly linked list data structure."""
         self.head = None  # First element in the list
-        self.tail = None  # Last element in the list1
+        self.tail = None  # Last element in the list
         self.count = 0
 
     def __iter__(self) -> Generator[Any, None, None]:

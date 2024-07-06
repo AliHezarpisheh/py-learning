@@ -1,5 +1,7 @@
 """Module containing Circular Linked Lists."""
 
+from __future__ import annotations
+
 from typing import Any, Generator, Optional
 
 
@@ -7,8 +9,8 @@ class Node:
     def __init__(
         self,
         data: Optional[Any] = None,
-        next: Optional["Node"] = None,
-        previous: Optional["Node"] = None,
+        next: Optional[Node] = None,
+        previous: Optional[Node] = None,
     ) -> None:
         """Doubly Linked List Node."""
         self.data = data
@@ -192,7 +194,7 @@ class DoublyCircularLinkedList:
         Any
             The data of each node in the list.
         """
-        current = self.tail
+        current = self.head
         while True:
             data = current.data
             yield data
@@ -224,7 +226,7 @@ class DoublyCircularLinkedList:
         if index > self.count - 1:
             raise IndexError("Index out of range.")
 
-        current = self.tail
+        current = self.head
         for _ in range(index):
             current = current.next
         return current
@@ -250,7 +252,7 @@ class DoublyCircularLinkedList:
         if index > self.count - 1:
             raise IndexError("Index out of range.")
 
-        current = self.tail
+        current = self.head
         for _ in range(index):
             current = current.next
         current.data = value
@@ -336,14 +338,14 @@ class DoublyCircularLinkedList:
 
     def reverse_iter(self) -> Generator[Any, None, None]:
         """Iterate in the reverse order of the list."""
-        if self.tail is None:
+        if self.head is None:
             return
 
         current = self.tail
         while True:
             data = current.data
             yield data
-            current = current.next
+            current = current.previous
             if current == self.tail:
                 break
 

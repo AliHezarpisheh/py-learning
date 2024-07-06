@@ -1,3 +1,5 @@
+"""Module containing Doubly Linked List Node."""
+
 from typing import Any
 
 
