@@ -15,6 +15,8 @@ def isBalanced(s: str):
         if bracket in OPENING_BRACKETS:
             stack.append(bracket)
         elif bracket in CLOSING_BRACKETS:
+            if not stack:
+                return "NO"
             last_bracket = stack.pop()
             if BRACKETS_MAPPING.get(last_bracket, "") != bracket:
                 return "NO"
@@ -23,6 +25,8 @@ def isBalanced(s: str):
 
     if len(stack) == 0:
         return "YES"
+    else:
+        return "NO"
 
 
 if __name__ == '__main__':
