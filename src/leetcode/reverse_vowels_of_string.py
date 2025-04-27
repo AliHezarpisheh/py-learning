@@ -17,7 +17,9 @@ class Solution:
                 consonants_indexes.append(index)
         reversed_vowels = list(reversed(vowels))
 
-        characters = list(zip(reversed_vowels, vowel_indexes)) + list(zip(consonants, consonants_indexes))
+        characters = list(zip(reversed_vowels, vowel_indexes)) + list(
+            zip(consonants, consonants_indexes)
+        )
         ordered_characters = sorted(characters, key=lambda character: character[1])
 
         result = "".join([character[0] for character in ordered_characters])

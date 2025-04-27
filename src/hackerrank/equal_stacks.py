@@ -1,8 +1,5 @@
 def equalStacks(h1, h2, h3):
     all_numbers = []
-    new_h1 = []
-    new_h2 = []
-    new_h3 = []
 
     for number in h1:
         all_numbers.append(number)
@@ -14,7 +11,7 @@ def equalStacks(h1, h2, h3):
     all_numbers = sorted(all_numbers)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     first_multiple_input = input().rstrip().split()
     n1 = int(first_multiple_input[0])
     n2 = int(first_multiple_input[1])
