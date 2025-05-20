@@ -145,28 +145,22 @@ class DoublyLinkedList:
             The data to delete from the list.
         """
         current = self.head
-        is_deleted = False
-
-        if current is None:
-            return None
-        elif current.data == data:
-            self.head = current.next
-            self.head.previous = None
-            is_deleted = True
-        elif self.tail.data == data:
-            self.tail = self.tail.previous
-            self.tail.next = None
-            is_deleted = True
-        else:
-            while current:
-                if current.data == data:
+        while current:
+            if current.data == data:
+                if current.previous:
                     current.previous.next = current.next
-                    current.next.previous = current.previous
-                    is_deleted = True
-                current = current.next
+                else:
+                    self.head = current.next
 
-        if is_deleted:
-            self.count -= 1
+                if current.next:
+                    current.next.previous = current.previous
+                else:
+                    self.tail = current.previous
+
+                self.count -= 1
+                return True
+            current = current.next
+        return False
 
     def reverse_iter(self) -> Generator[Any, None, None]:
         """Iterate in the reverse order of the list."""
