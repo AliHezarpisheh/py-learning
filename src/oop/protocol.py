@@ -18,9 +18,11 @@ Key Points
 
 from typing import Protocol, runtime_checkable
 
+
 @runtime_checkable
 class Animal(Protocol):
-    def eat(self) -> None: ...
+    def eat(self) -> None:
+        ...
 
 
 class Cat:
@@ -28,7 +30,8 @@ class Cat:
         print("Cat is eating...")
 
 
-class Dog: ...
+class Dog:
+    ...
 
 
 def eat(animal: Animal) -> None:
