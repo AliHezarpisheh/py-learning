@@ -60,17 +60,16 @@ def print_doubly_linked_list(node, sep):
 #
 
 def reverse(llist):
+    if llist is None:
+        return None
+
     current = llist
+    while current:
+        current.prev, current.next = current.next, current.prev
 
-    while True:
-        prev = current.prev
-        next_node = current.next
-        current.prev = next_node
-        current.next = prev
-
-        if not next_node:
+        if current.prev is None:
             return current
-        current = next_node
+        current = current.prev
 
 
 if __name__ == '__main__':
