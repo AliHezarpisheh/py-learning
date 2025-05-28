@@ -17,6 +17,7 @@ class DoublyLinkedListNode:
     def __repr__(self):
         return f"Node(data={self.data})"
 
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -33,6 +34,7 @@ class DoublyLinkedList:
 
         self.tail = node
 
+
 def print_doubly_linked_list(node, sep):
     while node:
         print(str(node.data))
@@ -41,6 +43,7 @@ def print_doubly_linked_list(node, sep):
 
         if node:
             print(sep)
+
 
 #
 # Complete the 'reverse' function below.
@@ -59,6 +62,7 @@ def print_doubly_linked_list(node, sep):
 #
 #
 
+
 def reverse(llist):
     if llist is None:
         return None
@@ -72,7 +76,7 @@ def reverse(llist):
         current = current.prev
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
 
     for t_itr in range(t):
@@ -87,4 +91,4 @@ if __name__ == '__main__':
         llist1 = reverse(llist.head)
 
         print("----------------------------")
-        print_doubly_linked_list(llist1, ' ')
+        print_doubly_linked_list(llist1, " ")

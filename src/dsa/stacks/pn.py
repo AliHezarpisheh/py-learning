@@ -151,9 +151,9 @@ def evaluate_pn(expression: str) -> float:
         else:
             raise ValueError(f"Invalid number or operator: {token}")
 
-    assert len(stack) == 1, (
-        f"The reverse polish expression is not formed correctly: {expression}"
-    )
+    assert (
+        len(stack) == 1
+    ), f"The reverse polish expression is not formed correctly: {expression}"
     return stack.pop()
 
 

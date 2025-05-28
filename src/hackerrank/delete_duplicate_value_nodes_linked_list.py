@@ -24,7 +24,6 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
 
-
         self.tail = node
 
 
@@ -49,7 +48,7 @@ def removeDuplicates(llist):
     return llist
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
 
     for t_itr in range(t):
@@ -64,4 +63,4 @@ if __name__ == '__main__':
         llist1 = removeDuplicates(llist.head)
 
         print("----------------------------")
-        print_singly_linked_list(llist1, ' ')
+        print_singly_linked_list(llist1, " ")

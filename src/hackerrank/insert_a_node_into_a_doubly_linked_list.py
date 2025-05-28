@@ -4,13 +4,13 @@ Inserting a Node Into a Sorted Doubly Linked List
 https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/problem
 """
 
-import os
 
 class DoublyLinkedListNode:
     def __init__(self, node_data):
         self.data = node_data
         self.next = None
         self.prev = None
+
 
 class DoublyLinkedList:
     def __init__(self):
@@ -26,8 +26,8 @@ class DoublyLinkedList:
             self.tail.next = node
             node.prev = self.tail
 
-
         self.tail = node
+
 
 def print_doubly_linked_list(node, sep):
     while node:
@@ -37,6 +37,7 @@ def print_doubly_linked_list(node, sep):
 
         if node:
             print(sep)
+
 
 #
 # Complete the 'sortedInsert' function below.
@@ -56,6 +57,7 @@ def print_doubly_linked_list(node, sep):
 #     DoublyLinkedListNode prev
 #
 #
+
 
 def sortedInsert(llist, data):
     head = llist
@@ -84,7 +86,7 @@ def sortedInsert(llist, data):
     return head
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     t = int(input())
@@ -103,5 +105,4 @@ if __name__ == '__main__':
         llist1 = sortedInsert(llist.head, data)
 
         print()
-        print_doubly_linked_list(llist1, ' ')
-
+        print_doubly_linked_list(llist1, " ")

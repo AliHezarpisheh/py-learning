@@ -6,16 +6,12 @@ https://www.hackerrank.com/challenges/get-the-value-of-the-node-at-a-specific-po
 
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
 
 class SinglyLinkedListNode:
     def __init__(self, node_data):
         self.data = node_data
         self.next = None
+
 
 class SinglyLinkedList:
     def __init__(self):
@@ -31,6 +27,7 @@ class SinglyLinkedList:
             self.tail.next = node
 
         self.tail = node
+
 
 def print_singly_linked_list(node, sep, fptr):
     while node:
@@ -55,7 +52,7 @@ def getNode(llist, positionFromTail):
     return follow.data
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests = int(input())
 
     for tests_itr in range(tests):
@@ -72,4 +69,4 @@ if __name__ == '__main__':
         result = getNode(llist.head, position)
 
         print("-----------------")
-        print(str(result) + '\n')
+        print(str(result) + "\n")

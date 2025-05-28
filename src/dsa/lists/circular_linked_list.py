@@ -228,7 +228,7 @@ class CircularSinglyLinkedList(Generic[T]):
         return " -> ".join(str(data) for data in self)
 
 
-class Node(Generic[T]):
+class Node(Generic[T]):  # noqa: F811
     """Node class for doubly linked lists, pointing to next and previous nodes."""
 
     def __init__(self, data: T) -> None:
