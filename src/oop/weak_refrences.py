@@ -38,3 +38,13 @@ foo = Foo()
 weakref.finalize(foo, print, "Resource is deleted")
 
 del foo
+
+# ---- custom classes ----
+
+
+class NoWeakref:
+    __slots__ = ()  # breaks weakref
+
+
+class SupportsWeakref:
+    __slots__ = ('__weakref__',)
