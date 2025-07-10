@@ -1,7 +1,8 @@
 import weakref
 
 
-class Foo: ...
+class Foo:
+    ...
 
 
 # ---- reference ----
@@ -47,4 +48,4 @@ class NoWeakref:
 
 
 class SupportsWeakref:
-    __slots__ = ('__weakref__',)
+    __slots__ = ("__weakref__",)

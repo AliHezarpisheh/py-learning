@@ -17,7 +17,7 @@ class Printer:
 
 
 # --------- overload ---------
-from typing import overload
+from typing import overload  # noqa: E402
 
 
 class Calculator:

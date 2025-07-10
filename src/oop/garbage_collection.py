@@ -15,9 +15,9 @@ Only objects that support cycle tracking (like lists, dicts, classes, etc.) are 
 
 import gc
 
-gc.collect()             # Manually trigger collection
-gc.disable()             # Turn off GC (not refcounting)
-gc.enable()              # Turn it back on
-gc.get_stats()           # Returns collection stats (3 gen)
-gc.get_count()           # Objects in each generation
-gc.get_threshold()       # Current thresholds
+gc.collect()  # Manually trigger collection
+gc.disable()  # Turn off GC (not refcounting)
+gc.enable()  # Turn it back on
+gc.get_stats()  # Returns collection stats (3 gen)
+gc.get_count()  # Objects in each generation
+gc.get_threshold()  # Current thresholds
